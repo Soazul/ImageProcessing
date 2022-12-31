@@ -14,6 +14,7 @@ int main(){
 	int animeCounter = 0;
 	int buildingCounter = 0;
 	int natureCounter = 0;
+	int peopleCounter = 0;
 	
 	sf::Font font;
 	if (!font.loadFromFile("arial.ttf")) std::cout << "Font not found!\n";
@@ -101,6 +102,10 @@ int main(){
 		nature.SetFont(font);
 		nature.SetPosition({575.0f, 687.0f});
 		nature.Render(renderWindow);
+		Button people("People Image");
+		people.SetFont(font);
+		people.SetPosition({750.0f, 687.0f});
+		people.Render(renderWindow);
 		
 		sf::RectangleShape introduction;
 		sf::Text introMessage;
@@ -195,6 +200,11 @@ int main(){
 					img.loadFromFile(filename);
 					f.DisplayImage(img, renderWindow);
 				}
+				if(people.IsMouseHovering(renderWindow)){
+					filename = "people.jpg";
+					img.loadFromFile(filename);
+					f.DisplayImage(img, renderWindow);
+				}
 				if(save.IsMouseHovering(renderWindow)){
 					sf::Texture texture;
 					texture.create(1375, 725);
@@ -211,9 +221,12 @@ int main(){
 					}else if(filename == "building.jpg"){
 						screenshot.saveToFile(std::to_string(buildingCounter) + "-" + filename);
 						buildingCounter++;
-					}else {
+					}else if(filename == "nature.jpg"){
 						screenshot.saveToFile(std::to_string(natureCounter) + "-" + filename);
 						natureCounter++;
+					}else {
+						screenshot.saveToFile(std::to_string(peopleCounter) + "-" + filename);
+						peopleCounter++;
 					}
 				}
 			}
