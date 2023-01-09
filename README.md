@@ -6,7 +6,7 @@ Sepia Tone Filter
 Blue Filter
 ![bluepeople](https://user-images.githubusercontent.com/98858820/210125119-19240441-ea73-4db7-9f38-46bac24359cf.jpg)
 ## [Description]
-I designed an image processor that incorporated the functional of saving the filtered image. The filters I included in this program are:
+I designed an image processor that incorporated the functional of saving the filtered image. The filters I included in this program are the following:
 - Red Filter: displays an image with only red pixels
 - Green Filter: displays an image with only green pixels
 - Blue Filter: displays an image with only blue pixels
